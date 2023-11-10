@@ -1,5 +1,5 @@
 import React from "react";
-import Loading from "../pages/atoms/Loading";
+import Loading from "../atoms/Loading";
 
 export default function AppLoading() {
   return (

@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className="home center">
       <div className="home__logo">
@@ -13,7 +15,9 @@ export default function Home() {
       <div>
         <p>Oops! Parece que a página que você está buscando não existe.</p>
       </div>
-      <button className="button-primary">Voltar para a página inicial</button>
+      <button onClick={() => navigate("/")} className="button-primary">
+        Voltar para a página inicial
+      </button>
     </div>
   );
 }
