@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 // importar imagem
 import logo from "../../images/logo.svg";
+import AppLoading from "../organisms/AppLoading";
 
 export default function Home() {
   //  crio uma constante navigate que chama a propriedade useNavigate do react-router-dom.
@@ -34,7 +35,7 @@ export default function Home() {
 
   // condiciono a renderização da página caso isLoading for false, caso for true, aparecerá apenas um Loading... (: operador ternário)
   return isLoading ? (
-    <h1>Loading...</h1>
+    <AppLoading />
   ) : (
     <div className="home center">
       <div className="home__logo">
