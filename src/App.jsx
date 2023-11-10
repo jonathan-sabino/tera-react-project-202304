@@ -7,7 +7,7 @@ import PostForm from "./components/pages/PostForm";
 import NotFound from "./components/pages/NotFound";
 
 import "./styles/normalize.css";
-import "./styles/fontawesome.min.css";
+import "./styles/font-awesome.min.css";
 import "./styles/main.css";
 
 function App() {
