@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import user1 from "../../images/placeholders/user-1.jpg";
 import post1 from "../../images/placeholders/post-1.jpg";
 import post2 from "../../images/placeholders/post-2.jpg";
@@ -6,6 +6,28 @@ import post3 from "../../images/placeholders/post-3.jpg";
 import Default from "../templates/Default";
 
 export default function UserBlog() {
+  const [user, setUser] = React.useState({});
+  const [posts, setPosts] = React.useState([]);
+
+  useEffect(() => {
+    // crio uma função que recebe todas minhas promises, que no caso serão 2 fetch
+    const getApiData = async () => {
+      const [userResponse, postsResponse] = await Promise.all([
+        fetch("https://63cf09718a780ae6e6710dbe.mockapi.io/users/3").then(
+          (response) => response.json()
+        ),
+        fetch("https://63cf09718a780ae6e6710dbe.mockapi.io/users/3/posts").then(
+          (response) => response.json()
+        ),
+      ]);
+      // atribuo os novos estados ao user e posts após os dados serem retornados da API
+      setUser(userResponse);
+      setPosts(postsResponse);
+    };
+    // chamo a função criada anteriormente
+    getApiData();
+  }, []);
+
   return (
     <Default>
       <div className="user-blog">
