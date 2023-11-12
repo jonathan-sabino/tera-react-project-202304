@@ -1,4 +1,5 @@
 import React from "react";
+import "./appfooter.style.css";
 
 export default function AppFooter() {
   return (
