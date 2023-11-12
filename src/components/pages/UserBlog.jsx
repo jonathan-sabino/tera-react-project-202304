@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // sempre que quisermos acessar algum valor da rota, usamos o useParams
 import { useParams } from "react-router-dom";
 
@@ -15,7 +15,7 @@ export default function UserBlog() {
   const [posts, setPosts] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
     // crio uma função que recebe todas minhas promises, que no caso serão 2 fetch
     const getApiData = async () => {
       const [userResponse, postsResponse] = await Promise.all([

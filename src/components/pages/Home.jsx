@@ -5,14 +5,15 @@ import { useNavigate } from "react-router-dom";
 // importar imagem
 import logo from "../../images/logo.svg";
 import AppLoading from "../organisms/AppLoading";
+import { CurrentUserContext } from "../../contexts/CurrentUserContent";
 
 export default function Home() {
   //  crio uma constante navigate que chama a propriedade useNavigate do react-router-dom.
   const navigate = useNavigate();
+  // crio um estado "currentUser" e um método que modificará esse estado "setCurrentUser", e inicializo com uma string vazia.
+  const { currentUser, setCurrentUser } = React.useContext(CurrentUserContext);
   // crio um estado "users" e um método que modificará esse estado "setUsers", e inicializo com um array vazio.
   const [users, setUsers] = React.useState([]);
-  // crio um estado "currentUser" e um método que modificará esse estado "setCurrentUser", e inicializo com uma string vazia.
-  const [currentUser, setCurrentUser] = React.useState("");
   // crio um estado "isLoading" e um método que modificará esse estado "setIsLoading", e inicializo com o boolean true.
   const [isLoading, setIsLoading] = React.useState(true);
 
