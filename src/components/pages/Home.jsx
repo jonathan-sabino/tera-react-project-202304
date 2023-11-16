@@ -31,7 +31,7 @@ export default function Home() {
       });
   }, []);
 
-  // crio uma variável que armazenará o userId selecionado no option
+  // crio uma variável que armazenará uma arrow function que pega o userId selecionado no evento
   const handleUserChange = (e) => setCurrentUser(e.target.value);
 
   // condiciono a renderização da página caso isLoading for false, caso for true, aparecerá apenas um Loading... (: operador ternário)
@@ -43,7 +43,11 @@ export default function Home() {
         <img src={logo} className="responsive" alt="" />
       </div>
       {/* adiciono a variável no onChange do select */}
-      <select onChange={handleUserChange} className="home__select-users">
+      <select
+        onChange={handleUserChange}
+        className="home__select-users"
+        defaultValue={currentUser}
+      >
         <option value="">Selecionar usuário</option>
 
         {users
